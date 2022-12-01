@@ -1,0 +1,369 @@
+--[[ 
+╔══════════════════════════════════════════════════[ www.hyperscripts.com.br ]═════════════════════════════════════════════════════════════╗
+ ___  ___      ___    ___ ________  _______   ________          ________  ________  ________  ___  ________  _________  ________      
+|\  \|\  \    |\  \  /  /|\   __  \|\  ___ \ |\   __  \        |\   ____\|\   ____\|\   __  \|\  \|\   __  \|\___   ___\\   ____\     
+\ \  \\\  \   \ \  \/  / | \  \|\  \ \   __/|\ \  \|\  \       \ \  \___|\ \  \___|\ \  \|\  \ \  \ \  \|\  \|___ \  \_\ \  \___|_    
+ \ \   __  \   \ \    / / \ \   ____\ \  \_|/_\ \   _  _\       \ \_____  \ \  \    \ \   _  _\ \  \ \   ____\   \ \  \ \ \_____  \   
+  \ \  \ \  \   \/  /  /   \ \  \___|\ \  \_|\ \ \  \\  \|       \|____|\  \ \  \____\ \  \\  \\ \  \ \  \___|    \ \  \ \|____|\  \  
+   \ \__\ \__\__/  / /      \ \__\    \ \_______\ \__\\ _\         ____\_\  \ \_______\ \__\\ _\\ \__\ \__\        \ \__\  ____\_\  \ 
+    \|__|\|__|\___/ /        \|__|     \|_______|\|__|\|__|       |\_________\|_______|\|__|\|__|\|__|\|__|         \|__| |\_________\
+             \|___|/                                              \|_________|                                            \|_________|
+  
+╚══════════════════════════════════════════════════[ www.hyperscripts.com.br ]═════════════════════════════════════════════════════════════╝
+--]] 
+
+--==================================== License  ====================================  
+
+
+configLicense = {
+    ["User"] = "817044814783578154", -- Para pegar seu ID do discord, assita esse vídeo e entenda. https://www.youtube.com/watch?v=xX-aWpqnphI
+    ["Key"] = "HS-NysJvMMBzNHR6a3rp0Kj", -- CÓDIGO DA LICENSA DA ABA "MEUS PRODUTOS", ACESSE EM: https://hyperscripts.com.br/cliente?page=meus-produtos
+}
+  
+
+--==================================== Config  ====================================  
+
+Hyper_Config = {  
+
+    create_vehicles_conce = {-- Esta tabela é para criar os veículos para serem inseridos no database, a tabela da linha 155, é para organizar os veículos nas lojas.
+        
+		{PNG = "lamborghini", Marca = "iconlamborghini", NameMarca = "LAMBORGHINI", NameCar = "Lamborghine Aventador", Model = 451, Stock = 3, KG = 1575, Preco = 2500000, PrecoCoins = 15000, Handiling = 100, TopSpeed = 100, Aceleration = 50},
+        {PNG = "ferrari", Marca = "iconferrari", NameMarca = "FERRARI", NameCar = "La Ferrari", Model = 411, Stock = 9, KG = 1365, Preco = 2200000, PrecoCoins = 13500, Handiling = 10, TopSpeed = 30, Aceleration = 100},
+        {PNG = "auditt", Marca = "iconaudi", NameMarca = "AUDI", NameCar = "Audi TT", Model = 560, Stock = 32, KG = 1260, Preco = 2000000, PrecoCoins = 11000, Handiling = 30, TopSpeed = 100, Aceleration = 100},
+        {PNG = "Skyline", Marca = "Nissan", NameMarca = "NISSAN", NameCar = "SKYLINE R34", Model = 562, Stock = 27, KG = 1540, Preco = 600000, PrecoCoins = 7000, Handiling = 100, TopSpeed = 100, Aceleration = 50},
+		{PNG = "ram3500", Marca = "iconram", NameMarca = "RAM", NameCar = "RAM 3500", Model = 470, Stock = 50, KG = 5352, Preco = 570000, PrecoCoins = 6300, Handiling = 100, TopSpeed = 100, Aceleration = 50},
+        {PNG = "tesla", Marca = "icontesla", NameMarca = "TESLA", NameCar = "Tesla Model S", Model = 405, Stock = 77, KG = 2108, Preco = 500000, PrecoCoins = 5500, Handiling = 50, TopSpeed = 100, Aceleration = 22},
+        {PNG = "subaruwrx", Marca = "iconsubaru", NameMarca = "SUBARU", NameCar = "Subaru Impreza 2.5 Wrx", Model = 551, Stock = 148, KG = 	1590, Preco = 308900, PrecoCoins = 3000, Handiling = 100, TopSpeed = 100, Aceleration = 50},
+        {PNG = "hilux", Marca = "icontoyota", NameMarca = "TOYOTA", NameCar = "Hilux 2.8", Model = 579, Stock = 32, KG = 2085, Preco = 230000, PrecoCoins = 1500, Handiling = 100, TopSpeed = 10, Aceleration = 50},
+        {PNG = "civic", Marca = "iconhonda", NameMarca = "HONDA", NameCar = "Civic Type R", Model = 426, Stock = 246, KG = 1380, Preco = 194810, PrecoCoins = 2300, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "audis4", Marca = "iconaudi", NameMarca = "AUDI", NameCar = "Audi S4", Model = 479, Stock = 78, KG = 1685, Preco = 162502, PrecoCoins = 6500, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "jeep", Marca = "iconhonda", NameMarca = "HONDA", NameCar = "Jeep Compass", Model = 426, Stock = 246, KG = 1908, Preco = 194810, PrecoCoins = 2300, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "lancer", Marca = "iconmitsubishi", NameMarca = "MITSUBISHI", NameCar = "Lancer", Model = 580, Stock = 75, KG = 1375, Preco = 120000, PrecoCoins = 7000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "cruze", Marca = "iconchevrolet", NameMarca = "CHEVROLET", NameCar = "Cruze", Model = 420, Stock = 31, KG = 1336, Preco = 99000, PrecoCoins = 2000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "panto", Marca = "iconbenefactor", NameMarca = "BENEFACTOR", NameCar = "Panto", Model = 415, Stock = 9999, KG = 	750, Preco = 5000, PrecoCoins = 1000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "knucklehead", Marca = "iconharley", NameMarca = "HARLEY DAVIDSON", NameCar = "Knucklehead", Model = 463, Stock = 250, KG = 90, Preco = 500000, PrecoCoins = 7000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "yzf", Marca = "iconyamaha", NameMarca = "YAMAHA", NameCar = "YZF R1", Model = 522, Stock = 27, KG = 199, Preco = 150000, PrecoCoins = 6000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "s1000", Marca = "iconbmw", NameMarca = "BMW", NameCar = "S 1000 XR", Model = 586, Stock = 48, KG = 228, Preco = 135000, PrecoCoins = 4500, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "xj6", Marca = "iconyamaha", NameMarca = "YAMAHA", NameCar = "XJ6", Model = 581, Stock = 17, KG = 220, Preco = 128000, PrecoCoins = 4000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "mt09", Marca = "iconyamaha", NameMarca = "YAMAHA", NameCar = "MT-09", Model = 461, Stock = 79, KG = 191, Preco = 120000, PrecoCoins = 3000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "ninja", Marca = "iconkawasaki", NameMarca = "KAWASAKI", NameCar = "Ninja ZX-10R", Model = 521, Stock = 10, KG = 206, Preco = 100000, PrecoCoins = 2000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "xre", Marca = "iconhonda", NameMarca = "HONDA", NameCar = "XRE 300", Model = 468, Stock = 297, KG = 153, Preco = 35000, PrecoCoins = 1500, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+		{PNG = "vespa", Marca = "iconpiaggio", NameMarca = "PIAGGIO", NameCar = "Vespa 50 Special", Model = 462, Stock = 9999, KG = 96, Preco = 3000, PrecoCoins = 1000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+        
+    };
+    
+    Concessionarias = {
+        
+        {Pos = {1990.974, -1315.852, 28.798}, 
+        type_conce = 'Carro',-- aqui você define o tipo da conce, para ser adicionado na tabela Veiculos.
+        Config = {Type = "Ped", -- "Ped" ou "Marker".
+        Ped = {IDPed = 9, Rotation = 94}, 
+        Marker = {SizeMarker = 1.5, Opacity = 100}}, 
+        Blip = {BlipVisible = true, IDBlip = 55}, 
+        Interior = 0, Dimensao = 0},
+        
+        {Pos = {960.257, -1678.337, 19.097}, 
+        type_conce = 'Moto',-- aqui você define o tipo da conce, para ser adicionado na tabela Veiculos.
+        Config = {Type = "Ped", -- "Ped" ou "Marker".
+        Ped = {IDPed = 0, Rotation = 188}, 
+        Marker = {SizeMarker = 1.5, Opacity = 100}}, 
+        Blip = {BlipVisible = true, IDBlip = 11}, 
+        Interior = 0, Dimensao = 0},
+        
+    },
+    Garagens = {
+        
+        {Pos = {2051.86, -1295.62, 23.98}, 
+        Config = {Type = "Marker", -- "Ped" ou "Marker".
+        Ped = {IDPed = 2, Rotation = 0}, 
+        Marker = {SizeMarker = 1.5, Opacity = 100}},
+        SpawnCar = {Pos = {1951.146, -2359.828, 13.547}, Rotation = 353}, 
+        Blip = {BlipVisible = true, IDBlip = 35}, 
+        Interior = 0, Dimensao = 0},
+        
+        {Pos = {1626.344, -1136.567, 23.906}, 
+        Config = {Type = "Marker", -- "Ped" ou "Marker".
+        Ped = {IDPed = 2, Rotation = 302},
+        Marker = {SizeMarker = 1.5, Opacity = 100}}, 
+        SpawnCar = {Pos = {1287.975, -2609.535, 8.048}, Rotation = 80}, 
+        Blip = {BlipVisible = false, IDBlip = 11}, 
+        Interior = 0, Dimensao = 0},
+        
+    },
+    
+    Desmanches = {-- Utilize o comando /dev para conseguir enxergar a área de criação do desmanche. 
+        
+        {Pos = {1935.475, -2313.495, 13.547}, Text = "Desmanche", Area = 20, Blip = {BlipVisible = true, IDBlip = 35}, Permissao = {"Console"}, Porcentagem = 10, Tempo = {Timer = 10, Formato = 1000}},
+        
+        
+    },
+    
+    AprenderVeiculos = {-- Utilize o comando /dev para conseguir enxergar a área de criação do desmanche. 
+        
+        {Pos = {1903.03, -2403.802, 13.539}, Area = 20, Blip = {BlipVisible = true, IDBlip = 35}, Permissao = {"Console"}, Comando = "apreender"},
+        
+        
+    },
+    
+    GaragensPublicas = {
+        
+        {
+            Pos = {1940.596, -2357.598, 13.547}, 
+            type_veh = 'Police';-- aqui você define o tipo da garagem pública, para ser adicionado na tabela VeiculosPublicos.
+            Config = {Type = "Marker", -- "Ped" ou "Marker".
+            Ped = {IDPed = 2, Rotation = 0}, 
+            Marker = {SizeMarker = 1.5, Opacity = 100}}, 
+            SpawnCar = {Pos = {1940.478, -2354.91, 13.547}, Rotation = 118},
+            Blip = {BlipVisible = true, IDBlip = 35}, 
+            Interior = 0, Dimensao = 0,
+            Permissao = {"Console","Admin"},
+        },
+        
+        {
+            Pos = {1928.1013183594, -2368.267578125, 13.546875}, 
+            type_veh = 'Faction';-- aqui você define o tipo da garagem pública, para ser adicionado na tabela VeiculosPublicos.
+            Config = {Type = "Marker", -- "Ped" ou "Marker".
+            Ped = {IDPed = 10, Rotation = 0}, 
+            Marker = {SizeMarker = 1.5, Opacity = 100}}, 
+            SpawnCar = {Pos = {1926.789, -2348.012, 13.547}, Rotation = 30},
+            Blip = {BlipVisible = true, IDBlip = 35}, 
+            Interior = 0, Dimensao = 0,
+            Permissao = {"Console","Admin"},
+        },
+        
+    },
+    
+    TestDrive = {
+        
+        {Pos = {1967.109, -2373.992, 13.547}, Interior = 0, Dimensao = 0, Tempo = 1, Formato = 60000},
+        
+    },
+    
+    Gerais = {
+        
+        CorServer = {61,133,198},
+        CorHexServer = "3D85C6",
+        Datas = {Coins = "HS:Coins", Fuel = "Fuel", ID = "ID"},
+        Binds = {lockPick = {tecla = 'H', name_tecla = 'H', anim = {'casino', 'dealone'}}, LockUnLock = "l", Aceitar = "G", Recusar = "U", Desmanchar = "G", DestrancarAll =  {'Console'}},
+        Comandos = 
+        {
+            setStock = "setstock", 
+            setVehicleID = "setvehicleID", 
+            setVehicleAcc = "setvehicleAcc", 
+            resetVehiclesID = "resetvehiclesID", 
+            resetVehiclesAcc = "resetvehiclesacc",
+            takeVehicleID = "takevehicleID", 
+            takevehicleAcc = "takevehicleAcc", 
+            Permissao = "Console", 
+            localizar = "localizar";
+            Documento = "doc";
+            PolicialDoc = {verify = true, comando = 'verdoc', acl = {'Console', 'Admin'}}
+        },
+        VendaVeiculos = {limite = 4, Porcentagem = 50, PercaTotalVenda = false, VendaJogadores =  true, VendaConce = true},
+        Coins = true,
+        blip_loc = 51,
+        Sistemas = {Water = true, AutoEmplacamento = false, AutoSeguro = false, dvall = true, deslog_veh = true, mult_spawn = true, localizar_veh = true},
+        DinheiroS = "R$ ",
+        CoinsS = "Cash: ",
+        SiglaPlaca = "BCR",
+    },
+    Veiculos = { 
+        
+        ['Carro'] = {
+
+			{PNG = "lamborghini", Marca = "iconlamborghini", NameMarca = "LAMBORGHINI", NameCar = "Lamborghine Aventador", Model = 451, Stock = 3, KG = 1575, Preco = 2500000, PrecoCoins = 15000, Handiling = 100, TopSpeed = 100, Aceleration = 50},
+			{PNG = "ferrari", Marca = "iconferrari", NameMarca = "FERRARI", NameCar = "La Ferrari", Model = 411, Stock = 9, KG = 1365, Preco = 2200000, PrecoCoins = 13500, Handiling = 10, TopSpeed = 30, Aceleration = 100},
+			{PNG = "auditt", Marca = "iconaudi", NameMarca = "AUDI", NameCar = "Audi TT", Model = 560, Stock = 32, KG = 1260, Preco = 2000000, PrecoCoins = 11000, Handiling = 30, TopSpeed = 100, Aceleration = 100},
+			{PNG = "Skyline", Marca = "Nissan", NameMarca = "NISSAN", NameCar = "SKYLINE R34", Model = 562, Stock = 27, KG = 1540, Preco = 600000, PrecoCoins = 7000, Handiling = 100, TopSpeed = 100, Aceleration = 50},
+			{PNG = "ram3500", Marca = "iconram", NameMarca = "RAM", NameCar = "RAM 3500", Model = 470, Stock = 50, KG = 5352, Preco = 570000, PrecoCoins = 6300, Handiling = 100, TopSpeed = 100, Aceleration = 50},
+			{PNG = "tesla", Marca = "icontesla", NameMarca = "TESLA", NameCar = "Tesla Model S", Model = 405, Stock = 77, KG = 2108, Preco = 500000, PrecoCoins = 5500, Handiling = 50, TopSpeed = 100, Aceleration = 22},
+			{PNG = "subaruwrx", Marca = "iconsubaru", NameMarca = "SUBARU", NameCar = "Subaru Impreza 2.5 Wrx", Model = 551, Stock = 148, KG = 	1590, Preco = 308900, PrecoCoins = 3000, Handiling = 100, TopSpeed = 100, Aceleration = 50},
+			{PNG = "hilux", Marca = "icontoyota", NameMarca = "TOYOTA", NameCar = "Hilux 2.8", Model = 579, Stock = 32, KG = 2085, Preco = 230000, PrecoCoins = 1500, Handiling = 100, TopSpeed = 10, Aceleration = 50},
+			{PNG = "civic", Marca = "iconhonda", NameMarca = "HONDA", NameCar = "Civic Type R", Model = 426, Stock = 246, KG = 1380, Preco = 194810, PrecoCoins = 2300, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "audis4", Marca = "iconaudi", NameMarca = "AUDI", NameCar = "Audi S4", Model = 479, Stock = 78, KG = 1685, Preco = 162502, PrecoCoins = 6500, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "jeep", Marca = "iconhonda", NameMarca = "HONDA", NameCar = "Jeep Compass", Model = 426, Stock = 246, KG = 1908, Preco = 194810, PrecoCoins = 2300, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "lancer", Marca = "iconmitsubishi", NameMarca = "MITSUBISHI", NameCar = "Lancer", Model = 580, Stock = 75, KG = 1375, Preco = 120000, PrecoCoins = 7000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "cruze", Marca = "iconchevrolet", NameMarca = "CHEVROLET", NameCar = "Cruze", Model = 420, Stock = 31, KG = 1336, Preco = 99000, PrecoCoins = 2000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "panto", Marca = "iconbenefactor", NameMarca = "BENEFACTOR", NameCar = "Panto", Model = 415, Stock = 9999, KG = 	750, Preco = 5000, PrecoCoins = 1000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+        },
+
+        ['Moto'] = {
+            
+            {PNG = "knucklehead", Marca = "iconharley", NameMarca = "HARLEY DAVIDSON", NameCar = "Knucklehead", Model = 463, Stock = 250, KG = 90, Preco = 500000, PrecoCoins = 7000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "yzf", Marca = "iconyamaha", NameMarca = "YAMAHA", NameCar = "YZF R1", Model = 522, Stock = 27, KG = 199, Preco = 150000, PrecoCoins = 6000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "s1000", Marca = "iconbmw", NameMarca = "BMW", NameCar = "S 1000 XR", Model = 586, Stock = 48, KG = 228, Preco = 135000, PrecoCoins = 4500, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "xj6", Marca = "iconyamaha", NameMarca = "YAMAHA", NameCar = "XJ6", Model = 581, Stock = 17, KG = 220, Preco = 128000, PrecoCoins = 4000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "mt09", Marca = "iconyamaha", NameMarca = "YAMAHA", NameCar = "MT-09", Model = 461, Stock = 79, KG = 191, Preco = 120000, PrecoCoins = 3000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "ninja", Marca = "iconkawasaki", NameMarca = "KAWASAKI", NameCar = "Ninja ZX-10R", Model = 521, Stock = 10, KG = 206, Preco = 100000, PrecoCoins = 2000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "xre", Marca = "iconhonda", NameMarca = "HONDA", NameCar = "XRE 300", Model = 468, Stock = 297, KG = 153, Preco = 35000, PrecoCoins = 1500, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+			{PNG = "vespa", Marca = "iconpiaggio", NameMarca = "PIAGGIO", NameCar = "Vespa 50 Special", Model = 462, Stock = 9999, KG = 96, Preco = 3000, PrecoCoins = 1000, Handiling = 100, TopSpeed = 20, Aceleration = 50},
+        },
+    },
+    
+    VeiculosPublicos = {
+
+        ['Police'] = {
+            
+            {PNG = "Bmx", NameCar = "BMX", Model = 481, TempoFora = {Timer = 10, Formato = 1000}, Valor = 0,  TopSpeed = 110, Aceleration = 50},
+            {PNG = "Mountain", NameCar = "Mountain Bike", Model = 510, TempoFora = {Timer = 10, Formato = 1000}, Valor = 50, TopSpeed = 30, Aceleration = 80}, 
+            {PNG = "carropreto", NameCar = "Camaro", Model = 541, TempoFora = {Timer = 0, Formato = 1000}, Valor = 150, TopSpeed = 1000, Aceleration = 80}, 
+        };
+
+        ['Faction'] = {
+            
+            {PNG = "Bmx", NameCar = "BMX", Model = 481, TempoFora = {Timer = 10, Formato = 1000}, Valor = 0,  TopSpeed = 110, Aceleration = 50},
+            {PNG = "Mountain", NameCar = "Mountain Bike", Model = 510, TempoFora = {Timer = 10, Formato = 1000}, Valor = 50, TopSpeed = 30, Aceleration = 80}, 
+        };
+        
+    },
+    TextsOrMessages = {
+        --Garagem
+        Garagem = {
+            SemVeiculos = {'Você não possui nenhum veiculo', 'error'},
+            SemPerm = {'Sem permissão!', 'error'},
+            VeiculoFora = {'Você já possui um veiculo fora da garagem ou está apreendido!', 'error'},
+            PercaTotal = {'Seu veiculo está com perca total', 'error'},
+            VeiculoGuardado = {'Este veiculo já está na garagem guardado!', 'error'},
+            ForaVehicle = {'Entre no veiculo que deseja guardar', 'error'},
+            PublicaSemMoney = {'Você não possui dinheiro suficiente', 'error'},
+            TempoFora = {'Você ficou tempo demais fora do veiculo e foi devolvido!', 'error'},
+        },
+
+        --Retirar Veiculo
+        TakeVehicle = {
+            SemPerm = {'Sem permissão!', 'error'},
+            SemCidadao = {'Cidadão não encontrado', 'error'},
+            SemVehicle = {'Este cidadão não possui este tipo de veiculo!', 'error'},
+        },
+
+        --Adicionar Veiculo
+        GiveVehicle = {
+            SemPerm = {'Sem permissão!', 'error'},
+            CmdSetID = {'Digite o comando /set ID Nome Veiculo', 'error'},
+            CmdSetAcc = {'Digite o comando /set Conta Nome Veiculo', 'error'},
+            JaPossui = {'O cidadão já possui esse tipo de veiculo!', 'error'},
+            SemPlayer = {'Cidadão não encontrado', 'error'},
+            NoVehicle = {'Veiculo não encontrado, tente outro veiculo!','error'},
+        },
+
+        --Reset de veiculos do player
+        ResetVehicles = {
+            SemCidadao = {'Cidadão não encontrado', 'error'},
+            SemVehicle = {'Este cidadão não possui nenhum veiculo!', 'error'},
+        },
+
+        --Setar Stock
+        SetStock = {
+            SemModelo = {'Este modelo de veiculo não existe!', 'error'},
+        },
+
+        --Venda
+        VendaGaragem = {
+            SiMesmo = {'Você não pode vender para si mesmo', 'error'},
+            GuardarVehicle = {'Guarde o veiculo na garagem para efetuar a venda!', 'error'},
+            PercaTotal = {'Não permitimos venda de veiculos com perca total', 'error'},
+            Proposta = {'Proposta enviada, aguarde', 'info'},
+            GuardarVehicle = {'Guarde o veiculo na garagem para efetuar a venda!', 'error'},
+            RecusedProposta = {'Sua proposta de venda foi recusada', 'error'},
+            RecusouProposta = {'Você recusou a proposta', 'error'},
+            RecusedMoney = {'O comprador não possui dinheiro suficiente para a compra!', 'error'},
+            SemMoney = {'Dinheiro insuficiente para a compra', 'error'},
+            PropostaAccept = {'Sua proposta de venda foi aceita', 'success'},
+        },
+
+        --Teste Drive
+        TesteDrive = {
+            Time = {'Seu teste drive acabou!', 'error'},
+            ExitVehicle = {'Você saiu do veiculo e seu  test drive acabou!', 'error'},        
+        },
+
+        --Trancar
+        Lock = {
+            Trancado = {'Esse veículo está trancado.', 'error'},
+            Unlock = {'Você destrancou o  veículo.', 'success'},
+            Lock = {'Você trancou o  veículo.', 'success'},
+            LockSeu = {'Você só pode trancar/destrancar seus veículos.', 'error'},
+            NoLock = {'Você não pode trancar/destrancar esse veículo.', 'error'},
+            SemVehicle = {'Você não está perto de nenhum veículo.', 'error'},
+        },
+
+        --Compras
+        CompraVehicle = {
+            SemStock = {'O veiculo está fora de stock no momento!!', 'error'},
+            VehicleExist = {'Você já possui esse veiculo em sua garagem', 'error'},
+        },
+        
+        --Documento
+        Document = {
+            VehicleIndisponivel = {'Você não pode ver o documento deste veiculo!', 'error'},
+            SemVehicle = {'Entre em seu veículo para abrir o documento!', 'error'},
+            SemDocumento = {'Este veículo não pertecente a este cidadão.', 'error'},
+            PlayerDistante = {'Se aproxime do veículo que deseja consultar.', 'error'},
+        },
+
+        -- Desmanche
+        Desmanche = {
+            Desmanche = "Desmanche",
+            VeiculoInexistenteDesmanche = {'Você não pode desmanchar este veículo!', 'error'},
+            VeiculoProprio = {'Você não pode desmanchar seu veículo!', 'error'},
+        },
+        
+        -- Apreender Veiculos
+        Apreender = {
+            AprenderVeiculos = "Apreender Veiculos",
+            VeiculoInexistente = {'Você não pode aprender este veículo!', 'error'},
+            EntrarNaArea = {'Digite /apreender para apreender este veiculo!', 'info'},
+            VeiculoApreendido = {'Veiculo apreendido com sucesso!', 'success'},
+            NoPermission = {'Sem permissão!', 'error'},
+        },
+    },
+}
+
+--[[
+
+╔═══════════════════════════════════════════[ www.hyperscripts.com.br ]══════════════════════════════════════════════════╗
+                                                                                                                                            
+ _______      ___    ___ ________  ________  ________  _________  ________  ________  ________  _______   ________      
+|\  ___ \    |\  \  /  /|\   __  \|\   __  \|\   __  \|\___   ___\\   __  \|\   ____\|\   __  \|\  ___ \ |\   ____\     
+\ \   __/|   \ \  \/  / | \  \|\  \ \  \|\  \ \  \|\  \|___ \  \_\ \  \|\  \ \  \___|\ \  \|\  \ \   __/|\ \  \___|_    
+ \ \  \_|/__  \ \    / / \ \   ____\ \  \\\  \ \   _  _\   \ \  \ \ \   __  \ \  \    \ \  \\\  \ \  \_|/_\ \_____  \   
+  \ \  \_|\ \  /     \/   \ \  \___|\ \  \\\  \ \  \\  \|   \ \  \ \ \  \ \  \ \  \____\ \  \\\  \ \  \_|\ \|____|\  \  
+   \ \_______\/  /\   \    \ \__\    \ \_______\ \__\\ _\    \ \__\ \ \__\ \__\ \_______\ \_______\ \_______\____\_\  \ 
+    \|_______/__/ /\ __\    \|__|     \|_______|\|__|\|__|    \|__|  \|__|\|__|\|_______|\|_______|\|_______|\_________\
+             |__|/ \|__|                                                                                    \|_________|
+
+
+ ╚═══════════════════════════════════════════[ www.hyperscripts.com.br ]══════════════════════════════════════════════════╝                                                                                                             
+
+--]]
+
+function DesmancheFunctions(player,vehicle,valor,valueConvertido)
+    exports["[HS]InventorySystem"]:giveItem(player, 61, tonumber(valor))
+    outputMessage(player,"Você recebeu "..valueConvertido.." de dinheiro sujo","success")
+end
+
+function buyVehiclePlayer(player, vehicle, value, result, stock)
+    --- Adicione alguma function que preferir ao comprar um novo veículo.
+end
+
+function spawnVehiclePlayer(player, vehicle, placa, namevehicle)
+    warpPedIntoVehicle(player, vehicle)
+end
+
+function saveVehiclePlayer(player, vehicle, placa, namevehicle)
+    --- Adicione alguma function que preferir ao guardar o veículo.
+end
+
+function sellVehiclePlayer (player, type_action, vehicle, value, model_veh, alvo)
+    if type_action == 'sell_player' then
+        iprint('o player '..getPlayerName(player)..' vendeu o veículo para player '..getPlayerName(alvo)..'.')
+    elseif type_action == 'sell_conce' then
+        iprint('o player '..getPlayerName(player)..' vendeu um veículo para a conce.')
+    end
+end
+
+
+
+outputMessage = function(elem, mess, tipo)--- Função de exportação da sua notify.
+    return exports["[ER]Notify_System"]:notify(elem, mess, tipo)
+end
